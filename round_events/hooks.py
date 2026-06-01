@@ -69,6 +69,7 @@ website_route_rules = [
     {"from_route": "/event/<path:subpath>", "to_route": "event"},
 ]
 
+
 # Generators
 # ----------
 
