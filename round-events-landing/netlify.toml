@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Proxy Frappe API calls — browser sends HTTPS to Netlify, Netlify forwards to HTTP backend
+[[redirects]]
+  from = "/api/*"
+  to = "http://13.201.121.252/api/:splat"
+  status = 200
+  force = true
+
+# Proxy Frappe file/image URLs
+[[redirects]]
+  from = "/files/*"
+  to = "http://13.201.121.252/files/:splat"
+  status = 200
+  force = true
+
+# SPA fallback — serve index.html for all React Router routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light Mode: High-end Blue & White */
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 215 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 30% 94%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 215 20% 94%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 215 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 215 80% 50%;
+
+    --radius: 0.75rem;
+
+    --glass: 0 0% 100% / 0.7;
+    --glass-border: 215 20% 85% / 0.4;
+    --brand-glow: 215 80% 50% / 0.15;
+    --brand-glow-strong: 215 80% 50% / 0.3;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 215 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 30% 94%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 215 20% 88%;
+    --sidebar-ring: 215 80% 50%;
+  }
+
+  /* Dark Mode: Future Noir - Monochrome ONLY */
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 92%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 92%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 92%;
+
+    --primary: 0 0% 92%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 92%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 92%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 70%;
+
+    --glass: 0 0% 8% / 0.7;
+    --glass-border: 0 0% 25% / 0.3;
+    --brand-glow: 0 0% 80% / 0.08;
+    --brand-glow-strong: 0 0% 80% / 0.15;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 0 0% 92%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 0% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/30 rounded-xl;
+    box-shadow: 0 8px 32px hsl(var(--brand-glow)), inset 0 1px 0 hsl(var(--glass-border));
+  }
+
+  .glass-nav {
+    @apply bg-background/80 backdrop-blur-xl border-b border-border/30;
+  }
+
+  .brand-glow {
+    box-shadow: 0 0 20px hsl(var(--brand-glow-strong)), 0 0 60px hsl(var(--brand-glow));
+  }
+
+  .brand-text {
+    @apply text-primary;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  .cta-button {
+    @apply bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .cta-button-outline {
+    @apply border-2 border-primary text-primary font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:shadow-lg;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
